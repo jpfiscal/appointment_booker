@@ -1,0 +1,16 @@
+.availabilityView {
+    display:flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
+.toggleBtnContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.availabilityDays {
+    display:flex;
+    flex-direction: row;
+}

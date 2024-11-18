@@ -1,0 +1,25 @@
+.timeBlock{
+    background-color: rgb(100, 100, 100);
+    border: 1px solid #d9eeec;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.timeblock :hover{
+    background-color: rgb(97, 211, 154);
+}
+
+.timeBlock p{
+    font-size: small;
+    color: white !important;
+}
+
+.timeBlockPast{
+    background-color: lightgrey;
+    cursor: not-allowed;
+    pointer-events: none;
+}

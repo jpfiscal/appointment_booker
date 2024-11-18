@@ -1,0 +1,22 @@
+.AppointmentConfirm{
+    display: flex;
+    flex-direction:column;
+    width: 80%;
+}
+
+.appointmentConfirmForm{
+    display: flex;
+    flex-direction:column;
+    align-items: start;
+}
+
+.appointmentConfirmForm textarea{
+    width: 100%;
+    height: 50%;
+}
+
+.appointmentConfirmForm button{
+    width: 100%;
+}
+
+

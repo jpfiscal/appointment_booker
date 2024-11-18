@@ -1,0 +1,21 @@
+.Login {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    width: 450px;
+    padding: 10px;
+}
+
+.Login h1{
+    font-style: normal;
+    font-weight: lighter;
+    font-family: sans-serif;
+    color: black;
+}
+
+.Login #btn_CreateAccount{
+    background-color: whitesmoke;
+    color: rgb(97, 211, 154);
+    width: 90%;
+    margin-left: 10px;
+}

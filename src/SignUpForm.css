@@ -1,0 +1,60 @@
+.SignupForm{
+    background-color: whitesmoke;
+    color: whitesmoke;
+    width: 450px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.SignupForm h1{
+    font-style: normal;
+    font-weight: lighter;
+    font-family: sans-serif;
+    color: black;
+}
+
+.SignupForm label{
+    color: black;
+    font-size: small;
+    font-weight: 600;
+    font-family:sans-serif;
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+.SignupForm .InputGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.SignupForm input{
+    background-color: white;
+    color: black;
+    width: 90%;
+    height: 2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-color: rgb(97, 211, 154);
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 3px 3px black;
+}
+
+.SignupForm form{
+    display: flex;
+    flex-direction: column;
+}
+
+.SignupForm button{
+    background-color: slategrey;
+    color: whitesmoke;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

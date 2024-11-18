@@ -1,0 +1,30 @@
+.AvailabilityDay{
+    height: 100%;
+    box-sizing: border-box;
+    width: 99%;
+}
+
+.AvailabilityDayContainer{
+    background-color: rgb(229, 229, 229);
+    height: 840px;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 99%;
+    border-color: black;
+    position: relative;
+}
+
+.AvailabilityDay h3{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+.AvailabilityDay p{
+    color: rgb(89, 89, 89);
+    font-weight: bold;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: small;
+    overflow: hidden;
+}
