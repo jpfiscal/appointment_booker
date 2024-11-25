@@ -7,7 +7,7 @@ class ServerApi {
     static token;
 
     static async request(endpoint, data = {}, method = "get") {
-        //console.debug("API Call:", endpoint, data, method);
+        console.debug("API Call:", endpoint, data, method);
     
         //there are multiple ways to pass an authorization token, this is how you pass it in the header.
         //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
@@ -37,7 +37,6 @@ class ServerApi {
     /**Decode token and return currentUser Object */
     static async decodeToken(token){
         const decoded = jwtDecode(token);
-        console.log(`PAYLOAD: ${JSON.stringify(decoded)}`);
         return decoded;
     }
     /**register a new user 
@@ -87,17 +86,6 @@ class ServerApi {
         let res = await this.request(`clients/${client_id}`,data, "patch");
         return res;
     }
-    /**Create a provider */
-
-    /**Update provider details */
-
-    /** Get Upcoming Appointments */
-    // static async getUpcomingAppointments(client_id, provider_id, booking_dt_start){
-    //     const booking_dt_start = new Date().toISOString().split('T')[0];
-    //     const data = {client_id, booking_dt_start};
-    //     let res = await this.request(`appointments`, data, "get");
-    //     return res;
-    // }
 
     /**APPOINTMENT RELATED CALLS */
     /** Get Appointments by client/provider/start_dt/end_dt */
@@ -122,23 +110,37 @@ class ServerApi {
             "availabilities": availabilityList,
             "client_note": client_note
             };
-        console.log(`DATA TO BOOK: ${JSON.stringify(data)}`);
 
         let res = await this.request(`appointments/`, data, "post");
         return res;
     }
+    
+    static async cancelAppointment(appointmentId){
+        let res = await this.request(`appointments/cancel/${appointmentId}`,undefined,"patch");
+        return res;
+    }
 
     /**AVAILABILITY RELATED CALLS */
+    //ADD TRY CATCH for complex calls (A)
     static async getAvailabilitiesByService(service_id, date){
         const data = {date};
-        
-        //console.log(`DATE (IN DATA): ${date}`);
         let res = await this.request(`availabilities/service/${service_id}`, data, "get");
         return res;
     }
 
     static async bookAvailabilities(appointment_id, availabilities){
         //link availabilities to appointment_id after booking
+    }
+
+    /**GOOGLE CALENDAR RELATED API CALL */
+    static async createGoogleCalendarEvent(eventData) {
+        const res = await this.request(`auth/create-event`, eventData, 'post');
+        return res;
+    }
+
+    static async getGoogleToken(userId) {
+        const res = await this.request(`auth/find-google-token/${userId}`);
+        return res;
     }
 }
 

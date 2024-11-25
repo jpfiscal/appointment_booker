@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import { convertToDate } from "./helpers/helper";
+import userContext from "./userContext";
 import './availabilityBlock.css';
 
 function AvailabilityBlock ({availability, service, client_id}) {
+    const currentUser = useContext(userContext);
     const navigate = useNavigate();
-    
+    const userId = currentUser.accountId;
     const handleClick = () =>{
         navigate("/appointment/confirm", {
-            state: {availability, service, client_id}
+            state: {userId, availability, service, client_id}
         }); //navigate to appointment confirmation component;
     }
     // Parse start and end times to get the hours and minutes

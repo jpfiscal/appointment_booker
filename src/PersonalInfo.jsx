@@ -24,7 +24,6 @@ function PersonalInfo(){
         async function fetchClientData() {
             try {
                 const currClient = await ServerApi.getClient(currentUser.email);
-                console.log(`currClient: ${JSON.stringify(currClient)}`);
                 if (currClient) {
                     setFormData({
                         client_id: currClient.client_id || '',

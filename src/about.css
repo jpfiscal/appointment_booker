@@ -1,0 +1,32 @@
+h2 {
+    text-align: left;
+}
+ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+.Description p {
+    color: whitesmoke;
+}
+
+.Description h1 {
+    color: whitesmoke;
+}
+
+footer{
+    margin: 0;
+    background-color: rgb(39, 55, 72);
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+footer p{
+    display: flex;
+    align-self: center;
+}

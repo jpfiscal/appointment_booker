@@ -13,7 +13,6 @@ function Appointments(){
             try{
                 const client = await ServerApi.getClient(currentUser.email);
                 setCurrClient(client);
-                console.log(`currClient: ${currClient}`);
             }catch (err){
                 console.error("Error fetching client: ", err);
             } finally {

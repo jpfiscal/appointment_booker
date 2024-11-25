@@ -18,7 +18,7 @@ function VertNav(){
                 <ul>
                     <li><a href="/appointments/history">Appointment History</a></li>
                     <li><a href="/accountInfo">Personal Info</a></li>
-                    <li><a href="/passwordUpdate">Change Password</a></li>
+                    <li><a href="/calendarSettings">Google Calendar Settings</a></li>
                 </ul>
                 <button onClick={handleBookAppointment}>Book an Appointment</button>
             </div>

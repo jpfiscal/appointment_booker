@@ -13,12 +13,22 @@ function AppointmentList({client_id, service_id, provider_id, booking_dt_start, 
             try{
                 const response = await ServerApi.getAppointments(client_id, service_id, provider_id, start_dt, end_dt, status);
                 setAppointmentList(response.appointments);
+                
             }catch (err){
                 console.error("Error fetching appointments: ", err);
             }
         }
         getAppointments();
     }, []);
+
+    const handleCancel = async (apptId) => {
+        try{
+            await ServerApi.cancelAppointment(apptId);
+            setAppointmentList(appointmentList.filter(appt => appt.appointment_id !== apptId))
+        }catch (err){
+            console.error("Error canceling appointment: ", err);
+        }
+    };
 
     const formatDate = (dateStr) =>{
         const date = new Date(dateStr);
@@ -40,6 +50,8 @@ function AppointmentList({client_id, service_id, provider_id, booking_dt_start, 
                             <th>Time</th>
                             <th>Service</th>
                             <th>Provider</th>
+                            <th>Status</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,10 +59,13 @@ function AppointmentList({client_id, service_id, provider_id, booking_dt_start, 
                         appointmentList.map(a => (
                             <AppointmentRecord 
                                 key={`${a["Client Name"]}_${a["time"]}`}
+                                apptId = {a.appointment_id}
                                 date = {formatDate(a.date)}
                                 time = {formatTime(a.time)}
                                 serviceName = {a["Service Name"]}
                                 providerName = {a["Provider Name"]}
+                                status = {a.status}
+                                onCancel={handleCancel} // pass the cancel handler down
                             />
                         ))
                     }

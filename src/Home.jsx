@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import userContext from "./userContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import AppointmentList from "./AppointmentList";
 import ServerApi from './api/api';
+import { toast } from 'react-toastify';
 
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
     const currentUser = useContext(userContext);
     const [currClient, setCurrClient] = useState(null);
     const [loading, setLoading] = useState(true);
+    const location = useLocation();
 
     const goToLogin = () => {navigate("/login")};
     const goToSignup = () => {navigate("/signup")};
@@ -17,9 +19,10 @@ function Home() {
     useEffect(() => {
         async function getClient(){
             try{
+                console.log(`CURRENT USER: ${JSON.stringify(currentUser)}`);
                 const client = await ServerApi.getClient(currentUser.email);
                 setCurrClient(client);
-                console.log(`currClient: ${currClient}`);
+                console.log(`currClient: ${JSON.stringify(currClient)}`);
             }catch (err){
                 console.error("Error fetching client: ", err);
             } finally {
@@ -33,6 +36,17 @@ function Home() {
         }
         
     }, [currentUser]);
+
+    useEffect(() => {
+        const queryParams = new URLSearchParams(location.search);
+        const authSuccess = queryParams.get('authSuccess');
+
+        if(authSuccess){
+            toast.success('Successfully connected account to Google!');
+            queryParams.delete('authSuccess');
+            window.history.replaceState(null, '', window.location.pathname); 
+        }
+    }, [location]);
 
     if(!currentUser){
         return (

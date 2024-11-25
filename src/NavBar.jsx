@@ -16,24 +16,23 @@ function NavBar({ logout }) {
          //Menu items in the navbar for clients
         return (
             <div className="NavBar">
-                <Navbar expand="md">
+                <Navbar >
                     <NavLink to="/" className="navbar-brand">
                         Appointment Booker 
                     </NavLink>
-                    <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <NavLink to="/about">About</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/services">Book an Appointment</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <button onClick={handleLogout} className="nav-link">
-                                Log Out
-                            </button>
-                            {/* <NavLink to="#" onClick={handleLogout}>Log Out</NavLink> */}
-                        </NavItem>
-                    </Nav>
+                    <div className="menu-and-logout">
+                        <Nav className="menuItems">
+                            <NavItem>
+                                <NavLink to="/about">About</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink to="/services">Book an Appointment</NavLink>
+                            </NavItem>
+                        </Nav>
+                        <button onClick={handleLogout} className="nav-link">
+                            Log Out
+                        </button>
+                    </div>
                 </Navbar>
             </div>
         )
@@ -41,18 +40,16 @@ function NavBar({ logout }) {
         //Menu items in the navbar for providers and Admins
         return (
             <div className="NavBar">
-                <Navbar expand="md">
+                <Navbar >
                     <NavLink to="/" className="navbar-brand">
                         Appointment Booker 
                     </NavLink>
-                    <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <button onClick={handleLogout} className="nav-link">
-                                Log Out
-                            </button>
-                            {/* <NavLink to="#" onClick={handleLogout}>Log Out</NavLink> */}
-                        </NavItem>
-                    </Nav>
+                    <div className="menu-and-logout">
+                        <Nav></Nav>
+                        <button onClick={handleLogout} className="nav-link">
+                            Log Out
+                        </button>
+                    </div>
                 </Navbar>
             </div>
         )

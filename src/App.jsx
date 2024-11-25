@@ -8,6 +8,8 @@ import ServerApi from './api/api';
 import userContext from './userContext';
 import { useLocalStorage } from './hooks';
 import {jwtDecode} from "jwt-decode";
+import { ToastContainer } from 'react-toastify'; 
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [currentUser, setCurrentUser] = useLocalStorage(JSON.parse(localStorage.getItem('currUser')),null);
@@ -58,6 +60,7 @@ function App() {
       <userContext.Provider value={currentUser}>
         <div className='App'>
           <NavBar logout={logout} />
+          <ToastContainer />
           <VertNav />
           <AppRoutes login={login} signup={signup} logout={logout}/>
         </div>
