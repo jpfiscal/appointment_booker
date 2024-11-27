@@ -1,0 +1,25 @@
+.AppointmentList {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.AppoinmentList p{
+    text-align: center;
+}
+
+.AppointmentTbl {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.AppointmentTbl th{
+    border: 1px solid whitesmoke; 
+}
+
+.AppointmentTbl td{
+    border: 1px solid whitesmoke; 
+}
+
+.cancelAppt {
+    cursor: pointer;
+}

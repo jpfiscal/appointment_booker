@@ -40,7 +40,7 @@ function VertNav(){
         )
     } else {
         return(
-            <div className="VertNav">
+            <div className="VertNav" style={{width:0}}>
             </div>
         )
     }

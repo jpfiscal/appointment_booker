@@ -18,7 +18,7 @@ function NavBar({ logout }) {
             <div className="NavBar">
                 <Navbar >
                     <NavLink to="/" className="navbar-brand">
-                        Appointment Booker 
+                        Marveleyes
                     </NavLink>
                     <div className="menu-and-logout">
                         <Nav className="menuItems">

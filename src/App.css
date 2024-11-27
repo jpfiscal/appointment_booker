@@ -40,3 +40,29 @@
 .read-the-docs {
   color: #888;
 }
+
+.Content {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  overflow-y: auto;
+}
+
+.VertNav {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+}
+
+.AppRoutes{
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100%;
+}

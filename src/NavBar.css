@@ -12,7 +12,6 @@
     padding: 0 20px;
   }
 
-
   .NavBar .menu-and-logout {
     display: flex;
     flex-grow: 1;
@@ -31,6 +30,11 @@
     align-self: center;
   }
 
+  .navbar-brand .logo{
+    height: 70px;
+    margin: 0;
+  }
+
   .NavBar ul{
     display:flex;
     list-style: none;
@@ -46,6 +50,11 @@
     padding: 0;
   }
   
+  .NavBar li a.active {
+    background-color: rgb(80, 31, 158);
+    color: white;
+  }
+
   .NavBar a {
     color: #f0f2f5;
     text-decoration: none;
@@ -54,7 +63,7 @@
   }
 
   .NavBar a.active {
-    color: #f0f2f5;
+    
     font-weight: bold;
     border-bottom: 2px solid;
     box-sizing: border-box;
@@ -72,6 +81,11 @@
   .NavBar a.active.navbar-brand {
     border-bottom: none;
     justify-content: left;
+    color: whitesmoke;
+  }
+
+  .NavBar .navbar-brand:hover {
+    color: rgb(80, 31, 158);
   }
   
   .NavBar a:not(.navbar-brand):hover {

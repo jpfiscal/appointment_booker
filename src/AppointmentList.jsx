@@ -65,7 +65,7 @@ function AppointmentList({client_id, service_id, provider_id, booking_dt_start, 
                                 serviceName = {a["Service Name"]}
                                 providerName = {a["Provider Name"]}
                                 status = {a.status}
-                                onCancel={handleCancel} // pass the cancel handler down
+                                onCancel={handleCancel}
                             />
                         ))
                     }

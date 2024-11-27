@@ -1,0 +1,17 @@
+.ServiceTile {
+    border: 1px solid whitesmoke;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.ServiceTile:hover {
+    border-color: rgb(55, 75, 93);
+}
+
+.ServiceTile span{
+    font-weight: bold;
+}
+
+.ServiceTile h2 {
+    background-color: rgb(55, 75, 93);
+}

@@ -1,17 +1,11 @@
-h2 {
-    text-align: left;
-}
 ul {
     list-style-type: none;
     text-align: left;
 }
 
-p {
-    text-align: left;
-}
-
 .Description p {
     color: whitesmoke;
+    text-align: left;
 }
 
 .Description h1 {

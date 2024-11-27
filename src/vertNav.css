@@ -1,15 +1,14 @@
 .VertNav {
-    position: fixed;
+    /* position: fixed; */
     top: 20%;
     left: 0;
-
 }
 
 .VertNav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
+    width: 100%;
     background-color: #f1f1f1;
     border: 1px solid #555;
 }
@@ -26,8 +25,8 @@
     text-decoration: none;
 }
 
-li a.active {
-    background-color: #04AA6D;
+.VertNav li .active {
+    background-color: rgb(80, 31, 158);
     color: white;
 }
 
@@ -37,5 +36,19 @@ li a:hover:not(.active) {
 }
 
 .VertNav button {
+    display: block;
+    padding: 8px 16px;
     margin-top: 10px;
+    width: 100%;
+}
+
+.VertNav button:hover {
+    background-color: #555; /* Matches hover behavior of <a> */
+    color: white;
+}
+
+.VerNav h2 {
+    text-align: center;
+    margin: 0;
+    padding: 8px 16px;
 }

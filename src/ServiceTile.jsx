@@ -14,8 +14,8 @@ function ServiceTile({ id, name, group, description, price, duration }) {
             <h2>{name}</h2>
             <p><span>Service Type: </span>{group}</p>
             <p><span>Description: </span>{description}</p>
-            <p><span>Price: </span>{price}</p>
-            <p><span>Duration: </span>{duration}</p>
+            <p><span>Price: </span>${price}</p>
+            <p><span>Duration: </span>{duration} hours</p>
         </div>
     );
 }

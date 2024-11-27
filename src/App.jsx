@@ -61,8 +61,10 @@ function App() {
         <div className='App'>
           <NavBar logout={logout} />
           <ToastContainer />
-          <VertNav />
-          <AppRoutes login={login} signup={signup} logout={logout}/>
+          <div className='Content'>
+            <VertNav />
+            <AppRoutes login={login} signup={signup} logout={logout}/>
+          </div>
         </div>
       </userContext.Provider>
     </BrowserRouter>

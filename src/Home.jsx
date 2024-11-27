@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import AppointmentList from "./AppointmentList";
 import ServerApi from './api/api';
 import { toast } from 'react-toastify';
+import "./home.css";
 
 
 function Home() {
@@ -51,6 +52,7 @@ function Home() {
     if(!currentUser){
         return (
             <div className="loggedOutHome">
+                <img className="logo" src="src/assets/logo.jpg" alt="logo"></img>
                 <h1>Marveleyes Beauty Bar</h1>
                 <h3>Permanent Make Up Experts</h3>
                 <div className="loginSignupBtns">
@@ -62,16 +64,16 @@ function Home() {
     }else{
         return (
             <div className="loggedInHome">
-            <h1>Marveleyes Beauty Bar</h1>
-            <h3>Experts in Permanent Make Up</h3>
-            <h2>Upcoming Appointments</h2>
-            {currClient ? (
-                <AppointmentList key={currClient.client_id} client_id={currClient.client_id} booking_dt_start={Date.now()} />
-
-            ) : (
-                <div>Loading appointments...</div> // Loading message in place of AppointmentList
-            )}
-        </div>
+                
+                <h1>Marveleyes Beauty Bar</h1>
+                <h3>Experts in Permanent Make Up</h3>
+                <h2>Upcoming Appointments</h2>
+                {currClient ? (
+                    <AppointmentList key={currClient.client_id} client_id={currClient.client_id} booking_dt_start={Date.now()} />
+                ) : (
+                    <div>Loading appointments...</div> // Loading message in place of AppointmentList
+                )}
+            </div>
         )
     }
     
