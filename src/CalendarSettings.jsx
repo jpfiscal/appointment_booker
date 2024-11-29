@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import userContext from "./userContext";
 import ServerApi from './api/api';
+import './CalendarSettings.css';
 
 function CalendarSettings(){
     const currentUser = useContext(userContext);

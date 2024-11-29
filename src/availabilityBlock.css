@@ -1,6 +1,6 @@
 .timeBlock{
-    background-color: rgb(100, 100, 100);
-    border: 1px solid #d9eeec;
+    background-color: rgb(255, 213, 187);
+    border: 1px solid rgb(55, 75, 93);
     border-radius: 4px;
     padding: 5px;
     cursor: pointer;
@@ -8,18 +8,24 @@
     box-sizing: border-box;
     position: absolute;
 }
-
-.timeblock :hover{
+/* 
+.timeBlock :hover{
     background-color: rgb(97, 211, 154);
-}
+} */
 
 .timeBlock p{
     font-size: small;
-    color: white !important;
+    color: rgb(32, 61, 85);
 }
 
 .timeBlockPast{
     background-color: lightgrey;
+    border: 1px solid rgb(81, 81, 81);
     cursor: not-allowed;
     pointer-events: none;
+    border-radius: 4px;
+    padding: 5px;
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
 }

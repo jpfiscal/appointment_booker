@@ -1,26 +1,32 @@
+
 ul {
     list-style-type: none;
     text-align: left;
+    color: black;
 }
 
 .Description p {
-    color: whitesmoke;
+    color: black;
     text-align: left;
 }
 
 .Description h1 {
-    color: whitesmoke;
+    color: black;
 }
 
-footer{
-    margin: 0;
-    background-color: rgb(39, 55, 72);
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
+.LashCertifications h2 {
+    color: black;
 }
 
-footer p{
-    display: flex;
-    align-self: center;
+.TattooCertifications {
+    color: black;
+}
+
+.Awards {
+    color: black;
+    margin-bottom: 10%;
+}
+
+.AboutPage li:hover{
+    color:black;
 }

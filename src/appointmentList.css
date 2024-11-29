@@ -13,11 +13,14 @@
 }
 
 .AppointmentTbl th{
-    border: 1px solid whitesmoke; 
+    border: 1px solid black; 
+    background-color: rgb(55, 75, 93);
+    color: whitesmoke;
 }
 
 .AppointmentTbl td{
-    border: 1px solid whitesmoke; 
+    border: 1px solid black;
+    background-color: rgb(255, 213, 187); 
 }
 
 .cancelAppt {

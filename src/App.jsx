@@ -10,6 +10,7 @@ import { useLocalStorage } from './hooks';
 import {jwtDecode} from "jwt-decode";
 import { ToastContainer } from 'react-toastify'; 
 import "react-toastify/dist/ReactToastify.css";
+import Footer from './Footer';
 
 function App() {
   const [currentUser, setCurrentUser] = useLocalStorage(JSON.parse(localStorage.getItem('currUser')),null);
@@ -58,12 +59,21 @@ function App() {
   return (
     <BrowserRouter>
       <userContext.Provider value={currentUser}>
-        <div className='App'>
+        <div className='App row'>
           <NavBar logout={logout} />
-          <ToastContainer />
-          <div className='Content'>
-            <VertNav />
-            <AppRoutes login={login} signup={signup} logout={logout}/>
+          <div className='row'>
+            <div className='col-sm-3'>
+              <VertNav />
+            </div>
+            <div className='col-md-9'>
+              <div className='Content'>
+                <ToastContainer />
+                <AppRoutes login={login} signup={signup} logout={logout}/>
+              </div>
+            </div>
+          </div>
+          <div className='row'>
+            <Footer/>
           </div>
         </div>
       </userContext.Provider>

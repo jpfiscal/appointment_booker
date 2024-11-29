@@ -1,10 +1,8 @@
 import React from "react";
 import './appointmentRecord.css';
+import AlertDialog from "./AlertDialog";
 
 function AppointmentRecord({apptId, date, time, serviceName, providerName, status, onCancel}){
-    async function cancelAppointment(){
-        onCancel(apptId);
-    };
 
     return(
         <tr>
@@ -13,7 +11,13 @@ function AppointmentRecord({apptId, date, time, serviceName, providerName, statu
             <td>{serviceName}</td>
             <td>{providerName}</td>
             <td>{status}</td>
-            <td><i className="cancelAppt" onClick={cancelAppointment}>&#10060;</i></td>
+            <td>
+                <AlertDialog
+                    key={apptId} 
+                    apptId={apptId}
+                    onCancel={onCancel}
+                />
+            </td>
         </tr>
     )
 }

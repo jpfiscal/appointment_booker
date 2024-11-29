@@ -31,7 +31,7 @@ function AvailabilityDay({date, service, client_id}){
             {
                 (availabilities.availabilities && availabilities.availabilities.length) ? (
                     availabilities.availabilities.map(availability => (
-                        <AvailabilityBlock 
+                        <AvailabilityBlock
                             key={`${availability.date}_${availability["start time"]}`} 
                             availability={availability} 
                             service={service} 

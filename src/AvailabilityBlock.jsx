@@ -17,7 +17,6 @@ function AvailabilityBlock ({availability, service, client_id}) {
     const [startHour, startMinute] = availability["start time"].split(':').map(Number);
     const [endHour, endMinute] = availability["end time"].split(':').map(Number);
     
-
     // Calculate duration in minutes
     const durationInMinutes = (endHour * 60 + endMinute) - (startHour * 60 + startMinute);
 
@@ -37,7 +36,8 @@ function AvailabilityBlock ({availability, service, client_id}) {
             className={`timeBlock${isPast ? 'Past' : ''}`}
             style={{
                 height: height,
-                top: top
+                top: top,
+                zIndex: startHour
             }}
             onClick={handleClick}>
             <p>{availability["start time"]} - {availability["end time"]}</p>

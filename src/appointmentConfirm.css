@@ -4,10 +4,22 @@
     width: 80%;
 }
 
+.AppointmentConfirm li{
+    color: black;
+}
+
+.AppointmentConfirm li:hover{
+    color: black;
+}
+
 .appointmentConfirmForm{
     display: flex;
     flex-direction:column;
     align-items: start;
+}
+
+.appointmentConfirmForm button{
+    color: whitesmoke;
 }
 
 .appointmentConfirmForm textarea{

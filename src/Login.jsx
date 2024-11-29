@@ -7,7 +7,6 @@ function Login({login, signup}){
         <div className="Login">
             <h1>Sign in</h1>
             <LoginForm login={login}/>
-            <button id="btn_CreateAccount">Create Account</button>
         </div>
     )
 }

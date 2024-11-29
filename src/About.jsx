@@ -54,11 +54,6 @@ function About(){
                     <li>Xtreme Lashes Canada - 1st place in Lash Contest Challenge 2019</li>
                 </ul>
             </div>
-            <footer>
-                <h2>Got any questions? Contact us:</h2>
-                <p>contact: info@marveleyes.ca</p>
-                <p>ig: @marveleyes</p>
-            </footer>
         </div>
     )
 }
