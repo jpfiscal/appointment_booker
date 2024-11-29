@@ -7,7 +7,6 @@ function AvailabilityView({service, client_id}){
     const [refDate, setRefDate] = useState(Date.now());
     let weekDates = getWeekFromDate(refDate);
     function getWeekFromDate(date){
-        //console.log(`service in availaibility VIEW: ${JSON.stringify(service)}`);
         const startOfWeek = new Date(date);
         const dayOfWeek = startOfWeek.getDay();
 

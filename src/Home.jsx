@@ -20,10 +20,8 @@ function Home() {
     useEffect(() => {
         async function getClient(){
             try{
-                console.log(`CURRENT USER: ${JSON.stringify(currentUser)}`);
                 const client = await ServerApi.getClient(currentUser.email);
                 setCurrClient(client);
-                console.log(`currClient: ${JSON.stringify(currClient)}`);
             }catch (err){
                 console.error("Error fetching client: ", err);
             } finally {

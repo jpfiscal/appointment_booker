@@ -65,7 +65,6 @@ function PersonalInfo(){
                 , formData.city
                 , formData.state
             )
-            console.log(`Client Created: ${newClient}`);
         } else {
             // if exists, call UpdateClient
             const updateClient = await ServerApi.updateClient(
@@ -76,7 +75,6 @@ function PersonalInfo(){
                 , formData.city
                 , formData.state
             )
-            console.log(`Client Updated: ${updateClient}`);
         }
         
         setFormData(INITIAL_STATE);

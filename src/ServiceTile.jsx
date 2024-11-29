@@ -6,7 +6,6 @@ function ServiceTile({ id, name, group, description, price, duration }) {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate(`${id}/availability`);
-        console.log(`SERVICE ID: ${id}`);
     };
     
     return (

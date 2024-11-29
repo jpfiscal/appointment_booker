@@ -9,7 +9,6 @@ function Services(){
         async function getServices(){
             try{
                 const response = await ServerApi.getAllServices();
-                // console.log(`services: ${JSON.stringify(response)}`);
                 setServiceList(response);
             }catch (err){
                 console.error("Error fetching services:", err);

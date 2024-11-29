@@ -11,8 +11,6 @@ function CalendarSettings(){
         async function getGoogleToken(){
             const googleToken = await ServerApi.getGoogleToken(currentUser.accountId);
             const tokenKeyCount = Object.keys(googleToken).length
-            console.log(`hasToken: ${hasToken}`);
-            console.log(`GOOGLE TOKENS: ${tokenKeyCount}`);
             if (tokenKeyCount > 0 ){
                 setHasToken(true);
             }
