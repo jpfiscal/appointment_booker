@@ -4,6 +4,8 @@ import CalendarSettings from "../CalendarSettings";
 import userContext from "../userContext";
 import ServerApi from "../api/api";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3001";
+
 jest.mock("../api/api");
 
 describe("CalendarSettings Component", () => {
@@ -52,6 +54,6 @@ describe("CalendarSettings Component", () => {
     const button = await screen.findByRole("button", { name: "Link to Google" });
     fireEvent.click(button);
 
-    expect(window.location.href).toBe("http://localhost:3001/auth/google?userId=1");
+    expect(window.location.href).toBe(`${BASE_URL}/auth/google?userId=1`);
   });
 });

@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import userContext from "./userContext";
 import ServerApi from './api/api';
 import './CalendarSettings.css';
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3001";
 
 function CalendarSettings(){
     const currentUser = useContext(userContext);
@@ -20,7 +21,7 @@ function CalendarSettings(){
 
     const handleClick = async (e) => {
         const handleGoogleAuth = () => {
-            window.location.href = `http://localhost:3001/auth/google?userId=${currentUser.accountId}`;
+            window.location.href = `${BASE_URL}/auth/google?userId=${currentUser.accountId}`;
         };
         handleGoogleAuth();
     }
