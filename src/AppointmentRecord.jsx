@@ -1,5 +1,4 @@
 import React from "react";
-import './appointmentRecord.css';
 import AlertDialog from "./AlertDialog";
 
 function AppointmentRecord({apptId, date, time, serviceName, providerName, status, onCancel}){
