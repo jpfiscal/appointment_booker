@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import userContext from "./userContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import './vertNav.css'
 
 function VertNav(){
@@ -16,9 +16,9 @@ function VertNav(){
             <div className="VertNav">
                 <h2>My Account</h2>
                 <ul>
-                    <li><a href="/appointments/history">Appointment History</a></li>
-                    <li><a href="/accountInfo">Personal Info</a></li>
-                    <li><a href="/calendarSettings">Google Calendar Settings</a></li>
+                    <li><Link to="/appointments/history">Appointment History</Link></li>
+                    <li><Link to="/accountInfo">Personal Info</Link></li>
+                    <li><Link to="/calendarSettings">Google Calendar Settings</Link></li>
                 </ul>
                 <button onClick={handleBookAppointment}>Book an Appointment</button>
             </div>
@@ -28,12 +28,12 @@ function VertNav(){
             <div className="VertNav">
                 <h2>My Account</h2>
                 <ul>
-                    <li><a href="/appointments/history">Appointment History</a></li>
-                    <li><a href="/appointments/manage">Manage Appointments</a></li>
-                    <li><a href="/availabilities/manage">Manage Availabilities</a></li>
-                    <li><a href="/services/manage">Manage Services</a></li>
-                    <li><a href="/accountInfo">Contact Info</a></li>
-                    <li><a href="/passwordUpdate">Change Password</a></li>
+                    <li><Link to="/appointments/history">Appointment History</Link></li>
+                    <li><Link to="/appointments/manage">Manage Appointments</Link></li>
+                    <li><Link to="/availabilities/manage">Manage Availabilities</Link></li>
+                    <li><Link to="/services/manage">Manage Services</Link></li>
+                    <li><Link to="/accountInfo">Contact Info</Link></li>
+                    <li><Link to="/passwordUpdate">Change Password</Link></li>
                 </ul>
                 <button onClick={handleBookAppointment}>Book an Appointment</button>
             </div>
