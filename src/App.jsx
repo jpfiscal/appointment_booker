@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter } from "react-router-dom";
-import './App.css';
-import AppRoutes from "./routes";
-import NavBar from './NavBar';
-import VertNav from "./VertNav";
+import './styles/App.css';
+import AppRoutes from "./components/routes";
+import NavBar from './components/NavBar';
+import VertNav from "./components/VertNav";
 import ServerApi from './api/api';
-import userContext from './userContext';
+import userContext from './components/userContext';
 import { useLocalStorage } from './hooks';
 import {jwtDecode} from "jwt-decode";
 import { ToastContainer } from 'react-toastify'; 
 import "react-toastify/dist/ReactToastify.css";
-import Footer from './Footer';
+import Footer from './components/Footer';
 
 function App() {
   const [currentUser, setCurrentUser] = useLocalStorage(JSON.parse(localStorage.getItem('currUser')),null);

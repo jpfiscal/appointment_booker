@@ -44,8 +44,21 @@ class ServerApi {
     */
     static async registerUser(name, password, email, phone, type="client"){
         const data = {name, password, email, phone, type};
-        let res = await this.request('auth/register', data, "post");
-        return res.token;
+        try{
+            let res = await this.request('auth/register', data, "post");
+            return res.token;
+        }catch (err){
+            console.error("Error during registration", err);
+
+            if (err.response?.status === 400) {
+                throw new Error("Registration Failed. Please check your inputs and try again.");
+            }else if (err.response?.status === 409) {
+                throw new Error("A user with this email already exists.");
+            }else{
+                throw new Error("An unexpected error occurred. Please try again later.");
+            }
+        }
+        
     }
     /**SERVICE RELATED CALLS */
     /**get a list of all services */

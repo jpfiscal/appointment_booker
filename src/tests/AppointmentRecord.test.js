@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import AppointmentRecord from "../AppointmentRecord";
-import AlertDialog from "../AlertDialog";
+import AppointmentRecord from "../components/AppointmentRecord";
+import AlertDialog from "../components/AlertDialog";
 
 jest.mock("../AlertDialog", () => ({
   __esModule: true,
