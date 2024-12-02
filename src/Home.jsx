@@ -50,7 +50,7 @@ function Home() {
     if(!currentUser){
         return (
             <div className="loggedOutHome">
-                <img className="logo" src="src/assets/logo.jpg" alt="logo"></img>
+                <img className="logo" src="assets/logo.jpg" alt="logo"></img>
                 <h1>Marveleyes Beauty Bar</h1>
                 <h3>Permanent Make Up Experts</h3>
                 <div className="loginSignupBtns">
