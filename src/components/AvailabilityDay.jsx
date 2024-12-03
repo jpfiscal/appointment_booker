@@ -1,5 +1,6 @@
 import React ,{useEffect, useState}from "react";
 import AvailabilityBlock from "./AvailabilityBlock";
+import { convertToDate } from "../helpers/helper";
 import '../styles/availabilityDay.css';
 import ServerApi from '../api/api';
 
@@ -20,6 +21,7 @@ function AvailabilityDay({date, service, client_id}){
         getAvailabilities(service.service_id, date);
         
     },[]);
+    
     return (
     <div className="AvailabilityDay" key={`${service.service_id}_${date}`}>
         <h4>{date}</h4>
@@ -28,7 +30,7 @@ function AvailabilityDay({date, service, client_id}){
                 (availabilities.availabilities && availabilities.availabilities.length) ? (
                     availabilities.availabilities.map(availability => (
                         <AvailabilityBlock
-                            key={`${availability.date}_${availability["start time"]}`} 
+                            key={`${convertToDate(availability.date)}_${availability["avail ID1"]}`} 
                             availability={availability} 
                             service={service} 
                             client_id={client_id}

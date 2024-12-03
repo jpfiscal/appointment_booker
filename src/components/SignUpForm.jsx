@@ -26,6 +26,11 @@ function SignUpForm({signup}){
         return passwordRegex.test(password);
     }
 
+    const validateEmail = (email) => {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
+
     const validatePhoneNumber = (phoneNum) => {
         const phoneRegex = /\(\d{3}\) \d{3}-\d{4}/;
         return phoneRegex.test(phoneNum);
@@ -48,9 +53,9 @@ function SignUpForm({signup}){
             errors.push("Password must be at least 8 characters long and include at least one letter and one number");
         }
 
-        //validate email is filled out
-        if (formData.name.length < 1){
-            errors.push("Email field is blank");
+        //validate email
+        if (!validateEmail(formData.email)){
+            errors.push("Email is required and must be a valid email format e.g.) user@email.com");
         }
 
         //validate phone number is in the right format
